@@ -125,7 +125,7 @@ class VersionSyncMirrorTests(unittest.TestCase):
             self.assertEqual(manifest["version"], "9.9.9")
             self.assertIn("cadgen==9.9.9", manifest["mcpServers"]["cad"]["args"])
             # Every cadgen skill's launch command moves with the server's, so they stay one installation.
-            skill = (root / "skills/cad/SKILL.md").read_text(encoding="utf-8")
+            skill = (root / "skills/dxf/SKILL.md").read_text(encoding="utf-8")
             self.assertIn("--from cadgen==9.9.9 cadgen doctor`", skill)
             # And so does the version it runs by the `cadgen` command, and the refusal it names.
             self.assertIn("`cadgen +9.9.9`", skill)

@@ -1,4 +1,9 @@
 interface:
   display_name: "CAD"
-  short_description: "Generate and validate CAD artifacts."
-  default_prompt: "Use $cad to create or edit the CAD model I describe, then show me the result."
+  short_description: "Design and validate parametric CAD with SolidCraft."
+  default_prompt: "Use $cad to create or edit my SolidCraft model, preserve its parametric history, and validate the result."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "solidcraft"
+      description: "SolidCraft local MCP server for parametric CAD execution."

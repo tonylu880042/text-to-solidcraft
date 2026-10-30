@@ -1,6 +1,7 @@
-"""The skills that show models say how in one section, word for word the same.
+"""The cadgen-backed skills share their viewer instructions.
 
-Each skill installs on its own, so each carries the section; this keeps the copies from drifting.
+Each installs on its own, so each carries the section. CAD uses SolidCraft's own
+inspection and display interface and must not inherit cadgen viewer commands.
 """
 
 from __future__ import annotations
@@ -10,7 +11,7 @@ import unittest
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[3]
-SKILLS = ("cad", "dxf", "urdf", "sdf", "srdf")
+SKILLS = ("dxf", "urdf", "sdf", "srdf")
 END = "If it fails to launch, say so.\n"
 
 
