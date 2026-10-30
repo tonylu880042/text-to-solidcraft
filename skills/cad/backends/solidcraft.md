@@ -54,6 +54,11 @@ inputs (filters `user`, `sketch`, `feature`, `favorites` are also supported), an
 `timeline.inspect {"feature":"<id or name>"}` for a definition and its input names.
 `execute` `document.revision {}` returns document ID and revision; selections and
 camera changes do not increment it. Record native feature/sketch IDs for edit checks.
+For posed assemblies, use `measure` or `execute` `occurrence.properties
+{occurrence:"Arm:1"}` for the placed geometry. The latter explicitly reports
+`coordinate_frame:"world"` and accepts an exact occurrence `path` for repeated
+nested placements. `inspect_design` body summaries can describe component-local
+geometry even after a joint drive; do not treat them as world-position evidence.
 
 `body_topology {"body":"<returned body name>"}` supplies face/edge indices, points,
 and analytic information. Edge midpoint coordinates pick fillet/chamfer edges;
@@ -193,6 +198,12 @@ Discover their contracts before use; routine dimensional edits need none of them
   inspect per-body fields and `open_bodies_skipped` rather than trusting totals.
   Mass is reported in grams and density in g/cm³; a returned default density is
   not evidence of the specified manufacturing material.
+- `execute` `occurrence.properties {occurrence:"Arm:1"}` or
+  `component.properties {component:"root"}` gives material-aware placed mass,
+  center of mass, and `inertia_g_mm2` (about the center of mass in world axes),
+  with `open_bodies_skipped`. These integrated properties are tessellation-based;
+  check numerical accuracy for the actual geometry. An optional `about:[x,y,z]`
+  requests inertia about another point. Do not infer structural strength from them.
 - `measure {items:[{type:"face",body:"Base",point:[x,y,z]},...]}` takes one/two
   selections. Faces/edges may also have an index. It returns analytic round sizes,
   minimum distance, center/axis distance and angles as applicable. Select verified
