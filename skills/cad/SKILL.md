@@ -20,6 +20,7 @@ when a parameter or feature edit can express the change.
 
 | Need | Read when relevant |
 | --- | --- |
+| New design or unclear requirements | [Design intake](references/design-intake.md) |
 | Feature strategy, datums, topology, repair | [Modeling strategy](references/modeling-strategy.md) |
 | Sketch dimensions and degrees of freedom | [Constraints](references/constraints.md) |
 | Named parameters, dependencies, iterative edits | [Parameters](references/parameters.md) |
@@ -42,8 +43,12 @@ that execution is blocked; do not silently switch to a script-generation backend
    does not authorize geometry changes.
 2. **Extract requirements.** Separate explicit dimensions, derived relationships,
    and unknowns. An unscaled image establishes no fit dimension. Check drawing
-   units, projection, and revision. Ask about a missing or conflicting value that
-   controls function or fit; make only necessary, disclosed assumptions elsewhere.
+   units, projection, and revision. Use [design intake](references/design-intake.md)
+   for a new or ambiguous design: ask the most consequential missing questions in
+   small groups, then summarize requirements, assumptions, unknowns and checks.
+   Ask about missing or conflicting values that control function or fit; make only
+   necessary, disclosed assumptions elsewhere. A requested concept may proceed with
+   provisional values, while dependent fit or production claims remain unverified.
 3. **Define parameters.** Name dimensions likely to change and shared expressions.
    Record units, datum, meaning, source, acceptable range, and tolerance where
    specified. Reference one wall or pitch parameter wherever it is reused.
