@@ -64,7 +64,7 @@ dependencies = [
   # triangles into its wire format, and the STL/3MF/GLB writers read them back
   # (engine/mesh.py, engine/export/). build123d requires numpy 2 already; cadgen
   # names the same range because it imports numpy itself.
-  "numpy>=2,<3",
+  "numpy>=2.4.6,<3",
   # The engine's stills rasterise what they draw over the picture (annotation ink,
   # measurements) with Pillow.
   "pillow",
